@@ -1,5 +1,6 @@
+//Count the number of vowels, consonants, digits, and special characters in the string. 
 import java.util.Scanner;
-public class Main{
+public class String_Analyzer{
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int vowel = 0;
