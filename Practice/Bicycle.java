@@ -1,0 +1,3 @@
+class Bicycle {
+    int gear;
+}

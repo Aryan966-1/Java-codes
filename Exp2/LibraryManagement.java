@@ -5,7 +5,7 @@ class Book {
     String author;
     double price;
 
-    // Constructor
+    // Parameterized Constructor
     Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
@@ -55,7 +55,7 @@ class NonFiction extends Book {
 
 public class LibraryManagement {
     public static void main(String[] args) {
-
+                                                                                
         Fiction fictionBook = new Fiction(
                 "Harry Potter",
                 "J.K. Rowling",

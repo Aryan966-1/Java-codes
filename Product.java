@@ -27,6 +27,7 @@ public class Product{
         System.out.print(   " Enter Product id: ");
         int id = sc.nextInt();
         System.out.print(" Enter Product name: ");
+        sc.nextLine();
         String name = sc.nextLine();
         System.out.print(" Enter Product price: ");
         double price = sc.nextDouble();

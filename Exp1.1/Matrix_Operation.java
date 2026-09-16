@@ -8,6 +8,11 @@ public class Matrix_Operation {
         row = sc.nextInt();
         System.out.print("Enter the number of columns you want in the matrix: ");
         col = sc.nextInt();
+        if(row <= 0 || col <= 0 || row != col){
+            System.out.println("Matrix multiplication requires two square matrices with positive dimensions.");
+            sc.close();
+            return;
+        }
         //First Matrix
         int[][] m = new int[row][col];
         System.out.println("Enter the elements of the First Matrix: ");

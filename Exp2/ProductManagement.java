@@ -5,14 +5,12 @@ class Product {
     int id;
     String name;
     double price;
-
     // Default Constructor
     Product() {
         id = 0;
         name = "Unknown";
         price = 0.0;
     }
-
     // Parameterized Constructor
     Product(int id, String name, double price) {
         this.id = id;
@@ -26,7 +24,6 @@ class Product {
         System.out.println("Price        : " + price);
     }
 }
-
 public class ProductManagement {
     public static void main(String[] args) {
         Product p1 = new Product();

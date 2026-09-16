@@ -31,8 +31,8 @@ public class Banking {
             }
         }
         else if(choice == 2){
-            String acc_num1 = sc.next();
             System.out.print("Enter Account number: ");
+            String acc_num1 = sc.next();
             if(acc_num1.equals(acc_num)){
                 System.out.print("Enter amount to withdraw: ");
                 double withdraw = sc.nextDouble();
