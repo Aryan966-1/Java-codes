@@ -19,6 +19,8 @@ public class Hard {
 	private static final String FILE_NAME = "employees.dat";
 
 	private static class Employee implements Serializable {
+		/* This is a private static nested class. 
+		It is serializable because the program wants to store Employee objects in a file.*/
 		private static final long serialVersionUID = 1L;
 
 		private final String name;
@@ -26,7 +28,7 @@ public class Hard {
 		private final String designation;
 		private final double salary;
 
-		Employee(String name, int id, String designation, double salary) {
+		Employee(String name, int id, String designation, double salary) { // Constructor to initialize the fields
 			this.name = name;
 			this.id = id;
 			this.designation = designation;
@@ -110,10 +112,33 @@ public class Hard {
 	}
 
 	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked") Why? Because:
+    input.readObject()
+ returns:
+     Object
+    and the program casts it to:
+     List<Employee>
+     Java cannot fully verify the generic type at runtime due to type erasure.
+     Therefore an unchecked cast warning can occur. */
 	private static List<Employee> readEmployees() throws IOException, ClassNotFoundException {
+		/*readEmployees(): This method may throw two checked exceptions.
+		IOException: If the file is not found or cannot be read.
+		ClassNotFoundException: If the class of the serialized object cannot be found.
+		or, during deserialization, Java cannot find the class needed to reconstruct the serialized object. */
 		try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
 			return (List<Employee>) input.readObject();
+			/*There are actually two operations:
+           1. Read object
+            input.readObject()
+            returns Object.
+            2. Cast
+            (List<Employee>)
+            tells compiler:
+            Treat this object as a List of Employee. */
 		} catch (java.io.FileNotFoundException exception) {
+			/*if:
+			 employees.dat is not found then, it assumes:
+			  there are currently zero employees and returns an empty ArrayList.*/
 			return new ArrayList<>();
 		}
 	}
