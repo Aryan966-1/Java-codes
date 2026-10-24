@@ -1,0 +1,4 @@
+application.properties
+com\example\demo\Product.class
+com\example\demo\ProductCatalogApplication.class
+com\example\demo\ProductController.class

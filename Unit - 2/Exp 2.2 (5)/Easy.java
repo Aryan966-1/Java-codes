@@ -8,7 +8,6 @@ public class Easy {
     private static Integer parseInteger(String value) {
         return Integer.parseInt(value);
     }
-
     public static void main(String[] args) {
         String[] inputValues = {"10", "20", "30", "40"};
         ArrayList<Integer> numbers = new ArrayList<>();

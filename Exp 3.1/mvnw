@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -f "C:/Users/devil/Downloads/maven/bin/mvn" ]; then
+    exec "C:/Users/devil/Downloads/maven/bin/mvn" "$@"
+elif [ -f "/c/Users/devil/Downloads/maven/bin/mvn" ]; then
+    exec "/c/Users/devil/Downloads/maven/bin/mvn" "$@"
+else
+    exec mvn "$@"
+fi
